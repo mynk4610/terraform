@@ -55,7 +55,7 @@ try {
   if (env.BRANCH_NAME == 'master') {
 
     
-    // Run terraform destroy------------------------------------------------
+    // Run terraform apply ------------------------------------------------
   stage('apply') {
     node {
 
@@ -69,7 +69,7 @@ try {
         dir("./np-acc/ap-south-1/dev-vpc/dev-env/c2o/ec2") {
             sh "pwd"
             sh "ls -ltra"
-            sh '/usr/local/bin/terraform destroy -auto-approve'
+            sh '/usr/local/bin/terraform apply -auto-approve'
         }
         }
       }
