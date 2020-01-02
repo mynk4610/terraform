@@ -1,0 +1,73 @@
+[root@ip-172-31-41-251 local]# git clone https://github.com/Mayankpande729/terraform.git
+Cloning into 'terraform'...
+remote: Enumerating objects: 50, done.
+remote: Counting objects: 100% (50/50), done.
+remote: Compressing objects: 100% (27/27), done.
+remote: Total 50 (delta 3), reused 45 (delta 1), pack-reused 0
+Unpacking objects: 100% (50/50), done.
+[root@ip-172-31-41-251 local]# cd terraform
+[root@ip-172-31-41-251 terraform]# cd np-acc/ap-south-1/dev-vpc/dev-env/c2o/ec2
+[root@ip-172-31-41-251 ec2]# ls -lart
+total 8
+-rwxr-xr-x 1 root root 302 Jan  1 19:19 main.tf
+-rwxr-xr-x 1 root root  43 Jan  1 19:19 locals.tf
+drwxr-xr-x 3 root root  17 Jan  1 19:19 ..
+drwxr-xr-x 2 root root  38 Jan  1 19:19 .
+[root@ip-172-31-41-251 ec2]# vi backend.tf
+[root@ip-172-31-41-251 ec2]# ls -lart
+total 12
+-rwxr-xr-x 1 root root 302 Jan  1 19:19 main.tf
+-rwxr-xr-x 1 root root  43 Jan  1 19:19 locals.tf
+drwxr-xr-x 3 root root  17 Jan  1 19:19 ..
+-rw-r--r-- 1 root root 152 Jan  1 19:20 backend.tf
+drwxr-xr-x 2 root root  56 Jan  1 19:20 .
+[root@ip-172-31-41-251 ec2]# chmod 775 *
+[root@ip-172-31-41-251 ec2]# ls -lart
+total 12
+-rwxrwxr-x 1 root root 302 Jan  1 19:19 main.tf
+-rwxrwxr-x 1 root root  43 Jan  1 19:19 locals.tf
+drwxr-xr-x 3 root root  17 Jan  1 19:19 ..
+-rwxrwxr-x 1 root root 152 Jan  1 19:20 backend.tf
+drwxr-xr-x 2 root root  56 Jan  1 19:20 .
+[root@ip-172-31-41-251 ec2]# pwd
+/app/local/terraform/np-acc/ap-south-1/dev-vpc/dev-env/c2o/ec2
+[root@ip-172-31-41-251 ec2]# cd /app/local/terraform
+[root@ip-172-31-41-251 terraform]# git init
+Reinitialized existing Git repository in /app/local/terraform/.git/
+[root@ip-172-31-41-251 terraform]# git add *
+[root@ip-172-31-41-251 terraform]# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   np-acc/ap-south-1/dev-vpc/dev-env/c2o/ec2/backend.tf
+
+[root@ip-172-31-41-251 terraform]# git commit -m "backend.tf added"
+[master 5bf99db] backend.tf added
+ Committer: root <root@ip-172-31-41-251.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 7 insertions(+)
+ create mode 100755 np-acc/ap-south-1/dev-vpc/dev-env/c2o/ec2/backend.tf
+[root@ip-172-31-41-251 terraform]# git push -f origin master
+Username for 'https://github.com': mayankpande729
+Password for 'https://mayankpande729@github.com':
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 686 bytes | 686.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Mayankpande729/terraform.git
+   21c8a22..5bf99db  master -> master
