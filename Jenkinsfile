@@ -1,4 +1,4 @@
-//add comment  //
+//add comment by mynk4610 //
 // Jenkinsfile
 String credentialsId = 'awstoJenkins'
 
@@ -76,7 +76,7 @@ try {
     }
   }
     
-   // Run terraform show-------------------------------------------------------
+   // Run terraform show state list-------------------------------------------------------
     stage('show') {
       node {
         withCredentials([[
@@ -89,7 +89,7 @@ try {
           dir("./np-acc/ap-south-1/dev-vpc/dev-env/c2o/ec2") {
               sh "pwd"
               sh "ls -ltra"
-              sh '/usr/local/bin/terraform show'
+              sh '/usr/local/bin/terraform state list'
           }
 
           }
