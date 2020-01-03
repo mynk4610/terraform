@@ -55,7 +55,7 @@ try {
   if (env.BRANCH_NAME == 'master') {
 
     
-    // Run terraform destroy ------------------------------------------------
+    // Run terraform destroy--------------------------------------
   stage('destroy') {
     node {
 
